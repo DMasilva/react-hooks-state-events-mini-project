@@ -16,18 +16,14 @@ function NewTaskForm({categories,onTaskFormSubmit}) {
     <form onSubmit={submitForm} className="new-task-form">
       <label>
         Details
-        <input type="text" name="text" />
+        <input type="text" required name="text" />
       </label>
       <label>
         Category
         <select name="category">
-          {categories.map((category,index)=>{
-            if(category==='All'){
-              return null
-            }else{
-              return <option key={index}>{category}</option>
-            }
-          })}
+
+          {categories.map(category=>Boolean(category==='All')? null : <option key={category}>{category}</option>)}
+         
         </select>
       </label>
       <input type="submit" value="Add task" />

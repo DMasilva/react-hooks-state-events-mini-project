@@ -15,6 +15,9 @@ function App() {
       setTasks([newTask,...tasks])
     
   }
+
+
+
   const filteredNames = tasks.filter((task)=>{
     if(category === 'All'){
       return true
